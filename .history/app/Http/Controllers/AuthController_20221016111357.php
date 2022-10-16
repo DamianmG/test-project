@@ -6,33 +6,33 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class AuthController extends Controller
 {
     public function register(Request $request) {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|confirmed'
-        ]);
 
-        try {
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
-            ]);
-    
-            // send email verification
-            $user->sendEmailVerificationNotification();
-            
-            // assign role
-            $user->assignRole('default');
-            
-            return response($user, 201);
-        } catch (\Exception $e) {
-            return response($e, 500);
-        }
+        $role = Role::create(['name' => 'default']);
+        $permission = Permission::create(['name' => 'products']);
+        // $request->validate([
+        //     'name' => 'required|string',
+        //     'email' => 'required|email|unique:users,email',
+        //     'password' => 'required|string|confirmed'
+        // ]);
+
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password)
+        // ]);
+
+        // $user->sendEmailVerificationNotification();
+
+        // $response = [
+        //     'user' => $user
+        // ];
+
+        return response($response, 201);
     }
 
     public function login(Request $request) {

@@ -16,23 +16,19 @@ class AuthController extends Controller
             'password' => 'required|string|confirmed'
         ]);
 
-        try {
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
-            ]);
-    
-            // send email verification
-            $user->sendEmailVerificationNotification();
-            
-            // assign role
-            $user->assignRole('default');
-            
-            return response($user, 201);
-        } catch (\Exception $e) {
-            return response($e, 500);
-        }
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        // send email verification
+        $user->sendEmailVerificationNotification();
+        
+        // assign role
+        $user->assignRole('default');
+        
+        return response($user, 201);
     }
 
     public function login(Request $request) {

@@ -30,8 +30,8 @@ class AuthController extends Controller
             $user->assignRole('default');
             
             return response($user, 201);
-        } catch (\Exception $e) {
-            return response($e, 500);
+        } catch (\Throwable $th) {
+            return response($th, 500);
         }
     }
 
