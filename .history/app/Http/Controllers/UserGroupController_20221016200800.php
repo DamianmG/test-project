@@ -18,9 +18,7 @@ class UserGroupController extends Controller
     public function getUserGroups()
     {
         $user = User::with('roles')->findOrFail(auth()->user()->id);
-        
         $userRoles = $user->roles->pluck('name');
-
         return response()->json(['user-groups' => $userRoles], 201);
     }
 

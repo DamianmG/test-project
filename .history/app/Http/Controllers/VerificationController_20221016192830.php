@@ -8,6 +8,7 @@ use App\Models\User;
 class VerificationController extends Controller
 {
     public function verify($user_id, Request $request) {
+        dd($request->all());
         if (!$request->hasValidSignature()) {
             return response()->json(["msg" => "Invalid/Expired url provided."], 401);
         }
@@ -18,7 +19,7 @@ class VerificationController extends Controller
             $user->markEmailAsVerified();
         }
     
-        return response()->json(["msg" => "Email verificated."], 401);
+        return response()->json(["msg" => "Invalid/Expired url provided."], 401);
 
     }
     

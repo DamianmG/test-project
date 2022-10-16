@@ -26,8 +26,8 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login'])->name('login');
 
 // email verification
-Route::get('email/verify/{id}', [VerificationController::class, 'verify'])->name('verification.verify');
-Route::get('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
+Route::get('email/verify/{id}', [VerificationController::verify])->name('verification.verify');
+Route::get('email/resend', [VerificationController::resend])->name('verification.resend');
 
 // forgot password
 Route::post('forgot-password', [ForgotPasswordController::class, 'forgot']);

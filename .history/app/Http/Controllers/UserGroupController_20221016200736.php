@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Illuminate\Validation\Rule;
-use App\Models\User;
 
 class UserGroupController extends Controller
 {
@@ -18,9 +17,7 @@ class UserGroupController extends Controller
     public function getUserGroups()
     {
         $user = User::with('roles')->findOrFail(auth()->user()->id);
-        
         $userRoles = $user->roles->pluck('name');
-
         return response()->json(['user-groups' => $userRoles], 201);
     }
 

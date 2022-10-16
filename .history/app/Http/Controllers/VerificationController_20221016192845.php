@@ -18,7 +18,7 @@ class VerificationController extends Controller
             $user->markEmailAsVerified();
         }
     
-        return response()->json(["msg" => "Email verificated."], 401);
+        return response()->json(["msg" => "Invalid/Expired url provided."], 401);
 
     }
     
