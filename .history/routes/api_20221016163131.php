@@ -21,8 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // registration and login
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // email verification
 Route::get('email/verify/{id}', 'VerificationController@verify')->name('verification.verify');
@@ -33,19 +33,17 @@ Route::post('forgot-password', [ForgotPasswordController::class, 'forgot']);
 
 // logged in and verified only
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
     
-    Route::post('menage-user-group', [UserGroupController::class, 'menageUserGroup']);
+    Route::post('/menage-user-group', [UserGroupController::class, 'MenageUserGroup']);
 
-    Route::get('get-all-user-groups', [UserGroupController::class, 'getAllUserGroups']);
-
-    Route::get('get-user-groups', [UserGroupController::class, 'getUserGroups']);
+    Route::get('/get-user-groups', [UserGroupController::class, 'getUserGroup']);
     
-    Route::get('products', function () {
+    Route::get('/products', function () {
         return 'product 1, product 2, prouct 3';
     })->middleware('permission:products');
 
-    Route::get('posts', function () {
+    Route::get('/posts', function () {
         return 'post 1, post 2, post 3';
     })->middleware('permission:posts');
 });

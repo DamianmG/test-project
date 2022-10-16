@@ -38,8 +38,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('menage-user-group', [UserGroupController::class, 'menageUserGroup']);
 
     Route::get('get-all-user-groups', [UserGroupController::class, 'getAllUserGroups']);
-
-    Route::get('get-user-groups', [UserGroupController::class, 'getUserGroups']);
     
     Route::get('products', function () {
         return 'product 1, product 2, prouct 3';
