@@ -28,8 +28,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('email/verify/{id}', 'VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'VerificationController@resend')->name('verification.resend');
 
-// forgot password
-Route::post('forgot-password', [ForgotPasswordController::class, 'forgot']);
+// reset and forgot password
+
 
 // logged in and verified only
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {

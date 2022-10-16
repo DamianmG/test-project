@@ -19,4 +19,3 @@ Route::get('/', function () {
 });
 
 Route::view('forgot_password', 'auth.reset_password')->name('password.reset');
-Route::post('reset-password', [ForgotPasswordController::class, 'reset']);

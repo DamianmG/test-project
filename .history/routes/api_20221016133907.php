@@ -28,7 +28,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('email/verify/{id}', 'VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'VerificationController@resend')->name('verification.resend');
 
-// forgot password
+// reset and forgot password
 Route::post('forgot-password', [ForgotPasswordController::class, 'forgot']);
 
 // logged in and verified only
