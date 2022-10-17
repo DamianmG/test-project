@@ -2,7 +2,7 @@ Installation steps:
 
 1. Download repository
 2. composer install
-3. php artisan migrate
+3. php artisan migrate --seed
 4. Fill .env file with db and mail credentials.
 
 Register user (email is sended after registration):
