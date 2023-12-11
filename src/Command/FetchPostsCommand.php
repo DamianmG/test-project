@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 #[AsCommand(
     name: 'FetchPostsCommand',
-    description: 'Fetching posts from https://jsonplaceholder.typicode.com/posts and saving it into database',
+    description: 'Fetching posts and saving it into database',
     aliases: ['app:fetch-posts']
 )]
 class FetchPostsCommand extends Command
