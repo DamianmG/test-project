@@ -59,10 +59,10 @@ class FetchPostsCommand extends Command
                     $newPost = (new Post())
                         ->setTitle($post['title'])
                         ->setBody($post['body'])
-                        ->setUserName($user['username']);
+                        ->setAuthor($user['name']);
             
                     $this->entityManager->persist($newPost);
-                    $output->writeln('Saved post: ' . $newPost->getTitle() . ' by ' . $newPost->getUserName());
+                    $output->writeln('Saved post: ' . $newPost->getTitle() . ' by ' . $newPost->getAuthor());
                 } else {
                     $output->writeln('Could not find user for post with userId: ' . $post['userId']);
                 }

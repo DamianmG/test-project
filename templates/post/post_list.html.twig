@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-12">
+                <h2 class="mb-4">Posts</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Body</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                            <tr>
+                                <th scope="row">{{ post.id }}</th>
+                                <td>{{ post.title }}</td>
+                                <td>{{ post.body }}</td>
+                                <td>{{ post.author }}</td>
+                                <td><a class="btn btn-danger" href="#">Usuń</td>
+                            </tr>
+
+                        {% else %}
+                            # Array "list" is empty / no iteration took place #
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -21,7 +21,7 @@ class Post
     private ?string $body = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $user_name = null;
+    private ?string $author = null;
 
     public function getId(): ?int
     {
@@ -52,14 +52,14 @@ class Post
         return $this;
     }
 
-    public function getUserName(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->user_name;
+        return $this->author;
     }
 
-    public function setUserName(string $user_name): static
+    public function setAuthor(string $author): static
     {
-        $this->user_name = $user_name;
+        $this->author = $author;
 
         return $this;
     }
