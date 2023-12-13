@@ -6,7 +6,7 @@
 
 ---
 
-## Instalation steps
+## Installation steps
 
 * [x] git clone https://github.com/DamianmG/test-project.git
 * [x] cd test-project
