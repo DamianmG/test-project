@@ -8,12 +8,13 @@
 
 ## Instalation steps
 
-1. git clone https://github.com/DamianmG/test-project.git
-2. cd test-project
-3. composer install
-4. php bin/console doctrine:database:create
-5. php bin/console doctrine:migrations:migrate
-6. symfony server:start
+* [x] git clone https://github.com/DamianmG/test-project.git
+* [x] cd test-project
+* [x] composer install
+* [x] php bin/console doctrine:database:create
+* [x] php bin/console doctrine:migrations:migrate
+* [x] symfony server:start
+* [x] symfony console app:fetch-posts
 ---
 
 ## Tasks
