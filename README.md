@@ -17,7 +17,7 @@ Take [home test](grzegorzb3.sg-host.com) by __Damian Gdula__.
 * [x] Removing posts added.
 * [x] `api-platform` installed and `/api/posts` endpoint created.
 * [x] Added `README`.
-* [x] Setup hosting.
+* [ ] Setup hosting.
 * [ ] Added unit tests.
 * [ ] Added documentation.
 
